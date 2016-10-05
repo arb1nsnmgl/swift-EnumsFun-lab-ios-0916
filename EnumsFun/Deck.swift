@@ -9,4 +9,20 @@
 import Foundation
 
 class Deck {
+    
+    var cards = [Card]().shuffled()
+    
+    init() {
+        for suit in Suit.suits {
+            for rank in Rank.ranks {
+                cards.append(Card(rank: rank, suit: suit))
+            }
+        }
+    }
+    
+    func split() -> ([Card], [Card]) {
+        return self.cards.split()
+    }
+    
+
 }
